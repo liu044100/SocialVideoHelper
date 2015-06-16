@@ -1,9 +1,8 @@
 //
 //  SocialVideoHelper.h
-//  picpak
 //
 //  Created by ryu-ushin on 6/5/15.
-//  Copyright (c) 2015 NguyenTheQuan. All rights reserved.
+//  Copyright (c) 2015 ryu-ushin. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
