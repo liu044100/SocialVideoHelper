@@ -9,13 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
-#import "Video.h"
+
+#define DispatchMainThread(block, ...) if(block) dispatch_async(dispatch_get_main_queue(), ^{ block(__VA_ARGS__); })
 
 @interface SocialVideoHelper : NSObject
 
-+(void)uploadTwitterVideo:(Video*)video account:(ACAccount*)account withCompletion:(dispatch_block_t)completion;
++(void)uploadTwitterVideo:(NSData*)videoData account:(ACAccount*)account withCompletion:(dispatch_block_t)completion;
 
-+(void)uploadFacebookVideo:(Video*)video account:(ACAccount*)account withCompletion:(dispatch_block_t)completion;
++(void)uploadFacebookVideo:(NSData*)videoData account:(ACAccount*)account withCompletion:(dispatch_block_t)completion;
 
 +(BOOL)userHasAccessToFacebook;
 +(BOOL)userHasAccessToTwitter;
