@@ -36,3 +36,8 @@ You can use this class method to detect whether the use has logged in Facebook a
 ```
 +(BOOL)userHasAccessToFacebook;
 ```
+
+# License
+
+SocialVideoHelper is available under the MIT license. See the LICENSE file for more info.
+
