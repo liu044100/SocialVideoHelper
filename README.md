@@ -5,10 +5,10 @@ A Class help to share video to Facebook &amp; Twitter easily.
 
 ##### Share Video to Twitter is relatively easy than to facebook. Thanks to the uploading media [new API](https://dev.twitter.com/rest/reference/post/media/upload-chunked).
 
-Just use this class method, and pass your videoData `NSData`, and Twitter account `ACAccount`, and completion block for handling the upload complete.
+Just use this class method, and pass your videoData `NSData`, the comment for the video `NSString`, and Twitter account `ACAccount`,and completion block `VideoUploadCompletion` for handling the upload complete or fail.
 
 ```
-+(void)uploadTwitterVideo:(NSData*)videoData account:(ACAccount*)account withCompletion:(dispatch_block_t)completion;
++(void)uploadTwitterVideo:(NSData*)videoData comment:(NSString*)comment account:(ACAccount*)account withCompletion:(VideoUploadCompletion)completion;
 
 ```
 If you are not familiar with how to use or get `ACAccount`,  you can refer to this [tutorial about the Social Framework](http://code.tutsplus.com/tutorials/ios-6-and-the-social-framework-twitter-requests--mobile-14840).
@@ -28,7 +28,8 @@ Share Video to Facebook is a little bit complicated, because you have to get `pu
 Similar to sharing video to Twitter, use this class method.
 
 ```
-+(void)uploadFacebookVideo:(NSData*)videoData account:(ACAccount*)account withCompletion:(dispatch_block_t)completion;
++(void)uploadFacebookVideo:(NSData*)videoData comment:(NSString*)comment account:(ACAccount*)account withCompletion:(VideoUploadCompletion)completion;
+
 ```
 
 You can use this class method to detect whether the use has logged in Facebook account in iOS Settings.
