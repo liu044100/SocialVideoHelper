@@ -9,13 +9,13 @@
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
 
-#define DispatchMainThread(block, ...) if(block) dispatch_async(dispatch_get_main_queue(), ^{ block(__VA_ARGS__); })
+typedef void(^VideoUploadCompletion)(BOOL success, NSString *errorMessage);
 
 @interface SocialVideoHelper : NSObject
 
-+(void)uploadTwitterVideo:(NSData*)videoData account:(ACAccount*)account withCompletion:(dispatch_block_t)completion;
++(void)uploadTwitterVideo:(NSData*)videoData comment:(NSString*)comment account:(ACAccount*)account withCompletion:(VideoUploadCompletion)completion;
 
-+(void)uploadFacebookVideo:(NSData*)videoData account:(ACAccount*)account withCompletion:(dispatch_block_t)completion;
++(void)uploadFacebookVideo:(NSData*)videoData comment:(NSString*)comment account:(ACAccount*)account withCompletion:(VideoUploadCompletion)completion;
 
 +(BOOL)userHasAccessToFacebook;
 +(BOOL)userHasAccessToTwitter;
