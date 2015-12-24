@@ -52,7 +52,7 @@
         } else {
             NSMutableDictionary *returnedData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
             
-            NSLog(@"stage1 dic -> %@", returnedData);
+            NSLog(@"Facebook Stage1 dic -> %@", returnedData);
             
             NSString *upload_session_id = returnedData[@"upload_session_id"];
             [SocialVideoHelper facebookVideoStage2:videoData comment:(NSString*)comment upload_session_id:upload_session_id account:account withCompletion:completion];
@@ -85,7 +85,7 @@
         } else {
             NSMutableDictionary *returnedData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
             
-            NSLog(@"stage2 dic -> %@", returnedData);
+            NSLog(@"Facebook Stage2 dic -> %@", returnedData);
             
             [SocialVideoHelper facebookVideoStage3:videoData comment:(NSString*)comment upload_session_id:upload_session_id account:account withCompletion:completion];
         }
@@ -118,7 +118,7 @@
             [SocialVideoHelper uploadError:error withCompletion:completion];
         } else {
             NSMutableDictionary *returnedData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-            NSLog(@"dic -> %@", returnedData);
+            NSLog(@"Facebook Stage3 dic -> %@", returnedData);
             
             if ([urlResponse statusCode] == 200){
                 NSLog(@"Facebook upload success !");

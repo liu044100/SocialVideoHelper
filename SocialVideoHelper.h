@@ -14,9 +14,7 @@ typedef void(^VideoUploadCompletion)(BOOL success, NSString *errorMessage);
 @interface SocialVideoHelper : NSObject
 
 +(void)uploadTwitterVideo:(NSData*)videoData comment:(NSString*)comment account:(ACAccount*)account withCompletion:(VideoUploadCompletion)completion;
-
 +(void)uploadFacebookVideo:(NSData*)videoData comment:(NSString*)comment account:(ACAccount*)account withCompletion:(VideoUploadCompletion)completion;
-
 +(BOOL)userHasAccessToFacebook;
 +(BOOL)userHasAccessToTwitter;
 
