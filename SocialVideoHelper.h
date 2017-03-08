@@ -1,7 +1,10 @@
 //
 //  SocialVideoHelper.h
 //
-//  Created by ryu-ushin on 6/5/15.
+//  Originally Created by ryu-ushin on 6/5/15.
+//  Updated async Twitter upload methods by LongMA and YuSong on 29/1/17.
+//  Now you should able to upload large video to Twitter (no more than 512MB)
+//  According to https://dev.twitter.com/rest/media/uploading-media
 //  Copyright (c) 2015 ryu-ushin. All rights reserved.
 //
 
